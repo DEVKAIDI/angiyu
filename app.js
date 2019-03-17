@@ -35,7 +35,7 @@ app.use(function(err, req, res, next) {
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/viewze', { useMongoClient: true, promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://localhost:27017', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
