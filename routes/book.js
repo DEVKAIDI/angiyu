@@ -47,4 +47,10 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+router.delete('/deleteAll', () => {
+  Book.deleteMany({}, ()=> {
+    res.send('delete ok');
+  });
+});
+
 module.exports = router;
