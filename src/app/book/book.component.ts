@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-book',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  
+  books: any
 
-  ngOnInit() {
-  }
+  ngOnInit(){ this.http.get('/book').subscribe(data=> {this.books = data}); }
 
 }
